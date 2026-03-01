@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    margin-top: 0;
+}
+
+.phase1{
+    background-color: #11CDD4;
+    margin:0 auto;
+    padding: 50px 0 20px ;
+    text-align: center;
+}
+.ph1 {
+    font-family: "Sacramento", cursive;
+    font-size: 90px;
+}
+.ph2 {
+    font-size: 50px;
+    font-family: "Montserrat", sans-serif;
+}
+.Pubg {
+    font-family: "Monsterrat";
+    font-weight: 900;
+    font-size: 50px;
+}
+.p21 {
+    background-color: #11CDD4;
+    margin:0 auto;
+    padding: 90px 37px 50px ;
+    text-align: left;
+
+}
+p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    font-weight: 500;
+}
+.p22 {
+     font-family:"Montserrat";
+     font-weight: 900;
+     font-size: 50px;
+}
+.freefire {
+    margin: 0 ;
+    padding: 50px 0 20px  ;
+    text-align: right;
+
+}
+hr {
+     border: dotted #64d9dd 6px;
+    border-bottom: none;
+    width: 4%;
+    margin: 100px auto;
+    background-color: white;
+}
+.contact {
+    background-color: #11CDD4;
+    margin:0 auto;
+    padding: 50px 0 20px ;
+    text-align: center;
+}
+.shoot {
+    font-family: "Sacramento", cursive;
+    font-size: 90px;
+    text-align: center;
+}
+.freefire {
+    padding: 50px 0 20px 20px;
+    margin-right: 40px;
+}
+.btn1 {
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 14px 40px ;
+    font-family:"Montserrat";
+    border: 2px solid #008CBA;
+    cursor: pointer;
+}
+.btn1:hover {
+    color: white;
+    background-color: #008CBA;
+}
+.gameimg {
+    position: relative;
+    height: 50px;
+    left: 1000px;
+    top: 70px;
+}
+.shootimg {
+    height: 500px;
+    width: 500px;
+}
+.free {
+          height: 100px;
+          width: 100px;  
+ }
+.telegram {
+    height: 50px;
+    width: 50px;
+    margin: 20px 0;
+    top: 30px;
+    left: 100px;
+}
