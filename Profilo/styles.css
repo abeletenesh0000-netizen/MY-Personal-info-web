@@ -1,0 +1,124 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Coder Image */
+.coder {
+    width: 300px;        /* smaller fixed width */
+    max-width: 80%;      /* never exceed 80% of parent container */
+    height: auto;        /* maintain aspect ratio */
+    border-radius: 100px;
+    margin-right: 20px;
+    float: left;         /* keep it on the left */
+    padding-top: 50px;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .coder {
+        position: static;
+        width: 60%;      /* scale down on tablet/mobile */
+        margin: 20px auto; /* center horizontally */
+        float: none;
+        padding-top: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .coder {
+        width: 80%;       /* smaller on small mobile screens */
+    }
+}
+
+
+
+
+
+
+/* Add a container class for consistent padding */
+.container {
+    width: 90%;           /* take up 90% of screen width */
+    max-width: 1200px;    /* prevent it from being too wide on large screens */
+    margin: 0 auto;       /* center horizontally */
+    padding: 0 20px;      /* horizontal spacing */
+}
+
+/* Optional: add some spacing to sections */
+.home, .middle, .middle2, .end {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    flex-wrap: wrap;
+}
+.name { font-size: 24px; font-weight: 600; margin: 0; }
+.career { color: gray; font-size: 14px; margin: 0; }
+.nav-links { list-style: none; display: flex; gap: 30px; padding: 0 20px; }
+.nav-links a { text-decoration: none; color: black; position: relative; transition: 0.3s; }
+.nav-links a::after { content: ""; position: absolute; width: 0%; height: 2px; background: rgb(0, 98, 245); left: 0; bottom: -5px; transition: 0.3s; }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a:hover { color: rgb(0, 98, 245); }
+
+/* Home Section */
+.title { display: flex; flex-direction: column; }
+span { color: rgb(0, 98, 245); font-size: 3rem; }
+.intro { font-size: 3rem; }
+.home { padding: 100px 50px; }
+button { padding: 10px 20px; border-radius: 7px; font-size: 1.5rem; font-family: 'Poppins', sans-serif; }
+.btn1 { background-color: rgb(0, 98, 245); color: #fff; border: none; }
+.btn2 { background-color: #fff; border: 1px solid rgb(255,198,93); }
+.btn2:hover { background-color: orange; cursor: pointer; }
+
+/* Cards */
+.card-container { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; padding: 20px; }
+.card { background-color: #fff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 20px; width: 200px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+.card .icon { font-size: 2.5rem; margin-bottom: 10px; }
+
+/* Middle Work Section */
+.img { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; padding: 50px 10px; }
+.img-card { display: flex; flex-direction: column; align-items: center; cursor: pointer; transition: transform 0.3s; }
+.img-card img { width: 400px; height: auto; border-radius: 10px; transition: transform 0.3s, box-shadow 0.3s; }
+.img-card:hover img { transform: scale(1.05); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+
+/* Contact Section */
+.end { padding: 50px 30px 20px; }
+.end-h1 { display: inline-block; border-bottom: 4px solid; border-image: linear-gradient(to right, rgb(0, 98, 245)) 1; }
+.contact-form { width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 15px; margin-left: auto; margin-right: 0; }
+.contact-form input, .contact-form textarea { width: 100%; padding: 12px; font-size: 16px; border-radius: 8px; border: 1px solid lightgray; font-family: 'Poppins', sans-serif; resize: vertical; min-height: 50px; }
+.contact-form input:focus, .contact-form textarea:focus { outline: none; border: 1px solid rgb(0,98,245); box-shadow: 0 0 5px rgba(0,98,245,0.5); }
+
+/* Footer Icons & Button */
+.contact-footer { display: flex; flex-direction: column; align-items: flex-end; gap: 15px; margin-top: 20px; }
+.end-img { display: flex; gap: 15px; }
+.end-img img { width: 50px; height: 50px; border-radius: 10px; transition: transform 0.3s; }
+.end-img img:hover { transform: scale(1.1); cursor: pointer; }
+.end-btn { background-color: rgb(255,126,6); border: none; color: #fff; align-self: flex-end; padding: 12px 25px; border-radius: 8px; font-size: 16px; transition: background 0.3s, transform 0.3s; }
+.end-btn:hover { background-color: rgb(255,100,0); transform: scale(1.05); cursor: pointer; }
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .navbar { flex-direction: column; align-items: flex-start; padding: 15px 20px; }
+    .nav-links { flex-direction: column; gap: 15px; width: 100%; }
+    .home { padding: 50px 20px; }
+    .intro { font-size: 2rem; }
+    span { font-size: 2.5rem; }
+    button { font-size: 1.2rem; padding: 8px 16px; }
+    .coder { position: static; width: 100%; margin: 20px 0; text-align: center; padding-top: 0; }
+    .img { flex-direction: column; align-items: center; }
+    .img-card img { width: 80%; }
+    .contact-footer { align-items: center; }
+}
