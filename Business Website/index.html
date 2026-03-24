@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible Stories: Jesus Christ and the End Times</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #FFD700; /* Gold */
+            --secondary-color: #1e3a8a; /* Blue */
+            --text-color: #1f2937; /* Dark gray */
+            --bg-color: #ffffff; /* White */
+            --accent-color: #f3f4f6; /* Light gray */
+            --dark-bg: #0f172a; /* Dark blue */
+            --dark-text: #e5e7eb; /* Light gray */
+            --dark-accent: #1e293b; /* Darker blue */
+        }
+
+        [data-theme="dark"] {
+            --text-color: var(--dark-text);
+            --bg-color: var(--dark-bg);
+            --accent-color: var(--dark-accent);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--bg-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-color);
+            transition: color 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--secondary-color);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--accent-color);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Media */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Links */
+        .links {
+            text-align: center;
+        }
+
+        .links .btn {
+            margin: 0 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Mobile menu */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Bible Stories</div>
+            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+            <ul id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#life">Life of Jesus</a></li>
+                <li><a href="#teachings">Teachings</a></li>
+                <li><a href="#end-times">End Times</a></li>
+                <li><a href="#verses">Bible Verses</a></li>
+                <li><a href="#media">Media</a></li>
+                <li><a href="#links">Links</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Jesus Christ: King of the Universe</h1>
+            <p>Explore the life, teachings, and prophecies of Jesus Christ from the New Testament. Discover the hope and salvation found in His words and the promise of His return.</p>
+            <a href="#life" class="btn">Begin Your Journey</a>
+        </div>
+    </section>
+
+    <!-- Life of Jesus -->
+    <section id="life" class="reveal">
+        <h2 class="section-title">The Life of Jesus</h2>
+        <div class="content-grid">
+            <div class="card">
+                <h3>Birth and Early Life</h3>
+                <p>Jesus was born in Bethlehem to Mary and Joseph, but Joseph was not his Biological father,   fulfilling ancient prophecies. His birth brought hope and joy to the world.</p>
+            </div>
+            <div class="card">
+                <h3>Miracles and Ministry</h3>
+                <p>Jesus performed numerous miracles, healing the sick, raising the dead, and demonstrating God's power through compassion and love.</p>
+            </div>
+            <div class="card">
+                <h3>Teachings and Parables</h3>
+                <p>Through parables and teachings, Jesus revealed profound truths about God's kingdom, love, and the path to eternal life.</p>
+            </div>
+            <div class="card">
+                <h3>Crucifixion and Resurrection</h3>
+                <p>Jesus sacrificed Himself on the cross for humanity's sins, then rose from the dead on the third day, conquering death forever.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teachings of Jesus -->
+    <section id="teachings" class="reveal">
+        <h2 class="section-title">Teachings of Jesus</h2>
+        <div class="content-grid">
+            <div class="card">
+                <h3>Love</h3>
+                <p>"Love your neighbor as yourself." Jesus taught unconditional love that transcends boundaries and brings healing.</p>
+            </div>
+            <div class="card">
+                <h3>Forgiveness</h3>
+                <p>"Forgive us our debts, as we also have forgiven our debtors." Forgiveness is central to Jesus' message of reconciliation.</p>
+            </div>
+            <div class="card">
+                <h3>Faith</h3>
+                <p>"If you have faith as small as a mustard seed..." Jesus emphasized the power of faith in overcoming life's challenges.</p>
+            </div>
+            <div class="card">
+                <h3>Salvation</h3>
+                <p>"For God so loved the world that He gave His one and only Son..." Salvation comes through faith in Jesus Christ.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- End Times -->
+    <section id="end-times" class="reveal">
+        <h2 class="section-title">The End Times</h2>
+        <div class="content-grid">
+            <div class="card">
+                <h3>Signs of the Times (Matthew 24)</h3>
+                <p>Jesus warned of wars, famines, earthquakes, and persecution as signs of the approaching end times.</p>
+            </div>
+            <div class="card">
+                <h3>The Great Tribulation</h3>
+                <p>A period of intense suffering and testing before Christ's return, described in Revelation and other prophetic books.</p>
+            </div>
+            <div class="card">
+                <h3>Christ's Return</h3>
+                <p>Jesus will return in glory to judge the living and the dead, establishing His eternal kingdom.</p>
+            </div>
+            <div class="card">
+                <h3>New Heaven and New Earth</h3>
+                <p>God will create a new heaven and new earth where righteousness dwells and all tears are wiped away.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bible Verses -->
+    <section id="verses" class="reveal">
+        <h2 class="section-title">Inspiring Bible Verses</h2>
+        <div class="content-grid">
+            <div class="card">
+                <h3>John 3:16</h3>
+                <p>"For God so loved the world that He gave His one and only Son, that whoever believes in Him shall not perish but have eternal life."</p>
+            </div>
+            <div class="card">
+                <h3>Matthew 24:36</h3>
+                <p>"But about that day or hour no one knows, not even the angels in heaven, nor the Son, but only the Father."</p>
+            </div>
+            <div class="card">
+                <h3>Revelation 21:4</h3>
+                <p>"He will wipe every tear from their eyes. There will be no more death or mourning or crying or pain, for the old order of things has passed away."</p>
+            </div>
+            <div class="card">
+                <h3>Romans 8:28</h3>
+                <p>"And we know that in all things God works for the good of those who love Him, who have been called according to His purpose."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media -->
+    <section id="media" class="reveal">
+        <h2 class="section-title">Media Gallery</h2>
+        <div class="content-grid">
+            <div>
+                <h3>Jesus' Life Story</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/QDRCwJHBCXc" frameborder="0" allowfullscreen></iframe>
+                    
+                </div>
+            </div>
+            <div>
+                <h3>End Times Prophecy</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/DzBBtt2tuSE" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <h3 style="text-align: center; margin: 3rem 0 2rem;">Image Gallery</h3>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Bible">
+            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Cross">
+            <img src="https://images.unsplash.com/photo-1507692049790-de58290a4354?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Hope">
+        </div>
+    </section>
+
+    <!-- Links -->
+    <section id="links" class="reveal">
+        <h2 class="section-title">Useful Links</h2>
+        <div class="links">
+            <a href="https://www.bible.com" class="btn" target="_blank">Read the Bible Online</a>
+            <a href="https://t.me/abeltach" class="btn" target="_blank">Join Our Telegram</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Bible Stories. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href=" https://x.com/AEtenesh"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/thedesiciples/"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.dataset.theme = body.dataset.theme === 'dark' ? '' : 'dark';
+            themeToggle.innerHTML = body.dataset.theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+
+        // Mobile menu
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Scroll animations
+        const reveals = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            reveals.forEach(reveal => {
+                const elementTop = reveal.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                const revealPoint = 150;
+
+                if (elementTop < windowHeight - revealPoint) {
+                    reveal.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+
+        // Smooth scrolling for nav links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu after click
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
